@@ -1,0 +1,98 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.wheel-container {
+  text-align: center;
+  position: relative; /* Needed for pointer positioning */
+}
+
+.wheel {
+  width: 350px; /* Adjusted width */
+  height: 350px; /* Adjusted height */
+  border-radius: 50%;
+  border: 10px solid #333;
+  position: relative;
+  overflow: hidden;
+  transition: transform 4s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.segment {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  border: 1px solid #fff;
+  clip-path: polygon(100% 100%, 100% 0, 0 0);
+  transform-origin: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px; /* Adjusted font size for better fit */
+  font-weight: bold;
+  color: #fff;
+  text-align: center; /* Center the text */
+  padding: 5px; /* Add some padding for better spacing */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Different colors for each segment */
+.segment:nth-child(1) {
+  background-color: #ff5733;
+  transform: rotate(0deg);
+}
+.segment:nth-child(2) {
+  background-color: #33ff57;
+  transform: rotate(40deg);
+}
+.segment:nth-child(3) {
+  background-color: #3357ff;
+  transform: rotate(80deg);
+}
+.segment:nth-child(4) {
+  background-color: #f1c40f;
+  transform: rotate(120deg);
+}
+.segment:nth-child(5) {
+  background-color: #9b59b6;
+  transform: rotate(160deg);
+}
+.segment:nth-child(6) {
+  background-color: #e67e22;
+  transform: rotate(200deg);
+}
+.segment:nth-child(7) {
+  background-color: #1abc9c;
+  transform: rotate(240deg);
+}
+.segment:nth-child(8) {
+  background-color: #34495e;
+  transform: rotate(280deg);
+}
+.segment:nth-child(9) {
+  background-color: #8e44ad;
+  transform: rotate(320deg);
+}
+
+.pointer {
+  position: absolute;
+  top: -20px; /* Adjust to position the pointer above the wheel */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 20px;
+  background-color: red; /* Pointer color */
+  border-radius: 5px;
+  z-index: 10; /* Ensure it is above the wheel */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Optional shadow for effect */
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
